@@ -1,9 +1,10 @@
 import './App.css';
+import Genres from './pages/genres';
 
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      <Genres />
     </div>
   );
 }
