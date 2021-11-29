@@ -1,7 +1,19 @@
+import { useSelector } from "react-redux";
+
 const GenresList = () => {
+  const genres = useSelector(state => state.genresReducer.genres);
+
   return (
     <div>
-      Genres List
+      {
+        genres.map((genre) => {
+          return (
+            <p key={genre.key}>
+              {genre.name}
+            </p>
+          )
+        })
+      }
     </div>
   );
 }
