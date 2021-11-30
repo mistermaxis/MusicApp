@@ -1,9 +1,7 @@
-import GenresList from "../components/genres-list";
+import GenresList from '../components/genres/genres-list';
 
-const Genres = () => {
-  return (
-    <GenresList />
-  );
-}
- 
+const Genres = () => (
+  <GenresList />
+);
+
 export default Genres;
