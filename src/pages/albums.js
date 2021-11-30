@@ -1,9 +1,7 @@
 import AlbumsList from '../components/albums/albums-list';
 
-const Albums = () => {
-  return (
-    <AlbumsList />
-  )
-};
+const Albums = () => (
+  <AlbumsList />
+);
 
 export default Albums;

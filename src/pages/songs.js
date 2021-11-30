@@ -1,9 +1,7 @@
-import SongsList from "../components/songs/songs-list";
+import SongsList from '../components/songs/songs-list';
 
-const Songs = () => {
-  return (
-    <SongsList />
-  );
-}
- 
+const Songs = () => (
+  <SongsList />
+);
+
 export default Songs;

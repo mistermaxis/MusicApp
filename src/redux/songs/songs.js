@@ -1,4 +1,4 @@
-import { fetchAlbumById } from "../../api/api";
+import { fetchAlbumById } from '../../api/api';
 
 const GET_ALBUM = 'songs/albumRetrieved';
 
@@ -13,7 +13,7 @@ const albumReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 function getAlbum(payload) {
   return {
@@ -22,10 +22,10 @@ function getAlbum(payload) {
   };
 }
 
-export const fetchSongs = (album_id) => async (dispatch) => {
-  const response = await fetchAlbumById(album_id);
+export const fetchSongs = (albumId) => async (dispatch) => {
+  const response = await fetchAlbumById(albumId);
   const album = response;
   dispatch(getAlbum(album));
-}
+};
 
 export default albumReducer;
