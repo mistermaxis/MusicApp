@@ -5,16 +5,19 @@ const API_KEY = '&api_key=9c6c688feaf152911b6a769dd1c0fe24&format=json';
 
 export const fetchAlbumsByGenre = async (id) => {
   const response = await fetch(
-    `${LAST_FM_API}${ALBUMS_BY_GENRE}${id}${API_KEY}`
-    );
+    `${LAST_FM_API}${ALBUMS_BY_GENRE}${id}${API_KEY}`,
+  );
   const json = await response.json();
   return json;
-}
+};
 
 export const fetchAlbumById = async (id) => {
   const response = await fetch(
-    `${LAST_FM_API}${SONGS_BY_ALBUM}${id}${API_KEY}`
-  )
+    `${LAST_FM_API}${SONGS_BY_ALBUM}${id}${API_KEY}`,
+  );
   const json = await response.json();
+  if (response.status === 404) {
+    return { error: 'Not Found' };
+  }
   return json;
-}
+};
