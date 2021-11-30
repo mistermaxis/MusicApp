@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import Container from 'react-bootstrap/Container';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Spinner from 'react-bootstrap/Spinner';
 import { fetchSongs } from '../../redux/songs/songs';
 
 const SongsList = () => {
@@ -15,22 +18,30 @@ const SongsList = () => {
   function renderSongs() {
     if (album.album) {
       return album.album.tracks.track.map((song) => (
-        <p key={song['@attr'].rank}>{song.name}</p>
+        <ListGroup.Item key={song['@attr'].rank}>
+          {song.name}
+        </ListGroup.Item>
       ));
     }
     if (album.error) {
-      return <p>{album.error}</p>;
+      return <h1>{album.error}</h1>;
     }
-    return <p>Loading</p>;
+    return (
+      <Spinner className="align-center" animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
   }
 
   return (
-    <div>
+    <Container>
       {
         album.album ? <h1>{album.album.name}</h1> : null
       }
-      {renderSongs()}
-    </div>
+      <ListGroup>
+        {renderSongs()}
+      </ListGroup>
+    </Container>
   );
 };
 
