@@ -1,4 +1,4 @@
-import { fetchAlbumsByGenre } from "../../api/api";
+import { fetchAlbumsByGenre } from '../../api/api';
 
 const GET_ALBUMS = 'albums/retrievedAlbums';
 
@@ -13,13 +13,13 @@ const albumsReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 function getAlbums(payload) {
   return {
     type: GET_ALBUMS,
     albums: payload,
-  }
+  };
 }
 
 export const fetchAlbums = (genre) => async (dispatch) => {
@@ -27,6 +27,6 @@ export const fetchAlbums = (genre) => async (dispatch) => {
   const albums = response.albums.album;
 
   dispatch(getAlbums(albums));
-}
+};
 
 export default albumsReducer;
