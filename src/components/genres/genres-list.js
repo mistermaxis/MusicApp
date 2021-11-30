@@ -1,3 +1,5 @@
+import Container from 'react-bootstrap/Container';
+import ListGroup from 'react-bootstrap/ListGroup';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -5,17 +7,18 @@ const GenresList = () => {
   const genres = useSelector((state) => state.genresReducer.genres);
 
   return (
-    <div>
-      {
-        genres.map((genre) => (
-          <p key={genre.key}>
-            <Link to={`/genre/${genre.id}`}>
+    <Container fluid>
+      <h1>Genres</h1>
+      <ListGroup>
+        {
+          genres.map((genre) => (
+            <ListGroup.Item as={Link} variant="flush" key={genre.key} to={`/genre/${genre.id}`}>
               {genre.name}
-            </Link>
-          </p>
-        ))
-      }
-    </div>
+            </ListGroup.Item>
+          ))
+        }
+      </ListGroup>
+    </Container>
   );
 };
 
