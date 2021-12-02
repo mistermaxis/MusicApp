@@ -1,5 +1,4 @@
-const mockAlbums = {
-  album: [
+const mockAlbums = [
     {
       name: 'Calling Out of Context',
       mbid: '1cc7c832-a864-4abd-bfa1-72784ca49b56',
@@ -62,7 +61,6 @@ const mockAlbums = {
         rank: '10',
       },
     },
-  ],
-};
+  ];
 
 export default mockAlbums;
