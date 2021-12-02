@@ -24,7 +24,7 @@ function getAlbums(payload) {
 
 export const fetchAlbums = (genre) => async (dispatch) => {
   const response = await fetchAlbumsByGenre(genre);
-  const albums = response.albums.album;
+  const albums = await response.albums.album.filter((album) => album.mbid !== '' && album.name !== 'Greatest Hits');
 
   dispatch(getAlbums(albums));
 };
