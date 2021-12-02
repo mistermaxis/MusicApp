@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -12,12 +12,47 @@ import { fetchAlbums } from '../../redux/albums/albums';
 
 const AlbumsList = () => {
   const genre = useParams().genre_id;
-  const albums = useSelector((state) => state.albumsReducer.albums);
+  const albums = useSelector((s) => s.albumsReducer.albums);
+  const [filter, setFilter] = useState([...albums]);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchAlbums(genre));
   }, [dispatch, genre]);
+
+  useEffect(() => {
+    setFilter([...albums]);
+  }, [albums]);
+
+  function handleChange(event) {
+    const { value } = event.currentTarget;
+    const regex = RegExp(`^.*(${value}).*`, 'i');
+
+    if (value.length > 0) {
+      setFilter(
+        albums.filter((album) => regex.test(album.name)),
+      );
+    } else {
+      setFilter([...albums]);
+    }
+  }
+
+  function renderAlbums() {
+    console.log(filter);
+    console.log(albums);
+
+    const list = filter.map((album) => {
+      if (album.mbid.length > 0) {
+        return (
+          <ListGroup.Item as={Link} to={`/album/${album.mbid}`} key={album.name}>
+            {album.name}
+          </ListGroup.Item>
+        );
+      }
+      return null;
+    });
+    return list;
+  }
 
   return (
     <Container>
@@ -25,22 +60,11 @@ const AlbumsList = () => {
         <Link to="/" className="me-auto">
           <FontAwesomeIcon icon={faCoffee} />
         </Link>
-        <Form.Control className="rounded" type="text" placeholder="Album" />
+        <Form.Control onChange={(e) => handleChange(e)} type="text" placeholder="Album" />
       </Stack>
       <h3>{genre.toUpperCase()}</h3>
       <ListGroup>
-        {
-          albums.map((album) => {
-            if (album.mbid.length !== 0) {
-              return (
-                <ListGroup.Item as={Link} to={`/album/${album.mbid}`} key={album.mbid}>
-                  {album.name}
-                </ListGroup.Item>
-              );
-            }
-            return null;
-          })
-        }
+        {renderAlbums()}
       </ListGroup>
     </Container>
   );
