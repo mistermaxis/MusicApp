@@ -3,7 +3,6 @@ import { screen, render as testRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import AlbumsList from '../__mocks__/albums-list';
 import store from '../../redux/configureStore';
-import userEvent from '@testing-library/user-event';
 
 const render = (component) => testRender(
   <Provider store={store}>
