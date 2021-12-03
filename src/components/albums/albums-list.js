@@ -62,9 +62,9 @@ const AlbumsList = () => {
   }
 
   return (
-    <Container fluid>
-      <Row className="py-3">
-        <Col xs={2} sm={4} className="align-items-center d-flex text-decoration-none" as={Link} to="/">
+    <Container className="px-0">
+      <Row className="py-2 gx-0">
+        <Col xs={2} sm={4} className="align-items-center d-flex px-3 text-decoration-none" as={Link} to="/">
           <FontAwesomeIcon color="white" icon={faChevronLeft} />
           <span className="ps-3 d-none d-sm-block back-to-genres">GENRES</span>
         </Col>
@@ -73,16 +73,19 @@ const AlbumsList = () => {
         </Col>
         <Col xs={2} sm={4} />
       </Row>
-      <Row className="my-3">
-        <Col className="header-logo">
+      <Row className="px-0 gx-0">
+        <Col xs={6} className="header-logo px-0">
           <Img className="w-100 logo-img" src={genrePicture} />
         </Col>
-        <Col className="justify-content-center d-flex flex-column genre-col">
+        <Col xs={6} className="px-3 justify-content-center d-flex flex-column genre-col">
           <h5 className="h5">Genre</h5>
           <h3 className="genre-header">{genre.toUpperCase()}</h3>
         </Col>
       </Row>
-      <Row>
+      <Row className="subtitle-songs gx-0 px-0">
+        <Col as="p" className="text-white my-1">Albums by Genre</Col>
+      </Row>
+      <Row className="gx-0">
         {renderAlbums()}
       </Row>
     </Container>
