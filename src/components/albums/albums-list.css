@@ -1,3 +1,27 @@
-a {
-  color: blue;
+.search-album {
+  background-color: #fff2 !important;
+  color: white !important;
+  border-color: white !important;
+}
+
+.search-album::placeholder,
+.back-to,
+.genre-header,
+.h5 {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.genre-col {
+  background-color: #fff3;
+}
+
+.header-logo {
+  opacity: 0.5;
+  max-height: 10rem;
+  overflow: hidden;
+}
+
+.card-img-top {
+  opacity: 0.5;
 }
