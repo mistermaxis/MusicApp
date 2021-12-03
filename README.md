@@ -27,9 +27,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Install
 
-- Navigate to the folder where you cloned the repo (eg: `Documents/MusicApp`).
-- Once in the folder, open a terminal window from there.
-- Alternatively, you can open a terminal from a shortcut and navigate to the folder using the command `cd` (eg: `cd Documents/MusicApp`):
+- Navigate to the folder where you cloned the repository (eg: `Documents/MusicApp`).
+- Once inside the folder, open a terminal window from there.
+- Alternatively, you can open a terminal from a shortcut and navigate to the folder using the command `cd` (eg: `cd Documents/MusicApp`).
 - Run `npm i` to install all the necessary dependencies.
 
 ### Usage
@@ -59,7 +59,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Microverse
+- [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
+- [Microverse](https://github.com/microverseinc)
 
 ## 📝 License
 
