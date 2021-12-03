@@ -36,8 +36,8 @@ const SongsList = () => {
       return <h1>{album.error}</h1>;
     }
     return (
-      <Container>
-        <Spinner animation="border" role="status">
+      <Container className="d-flex justify-content-center py-5">
+        <Spinner className="text-light" animation="border" role="status">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       </Container>
