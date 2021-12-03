@@ -3,10 +3,8 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import './genres-list.css';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 
 const GenresList = () => {
   const genres = useSelector((state) => state.genresReducer.genres);
@@ -17,7 +15,7 @@ const GenresList = () => {
       <Row className="gx-0">
         {
           genres.map((genre) => (
-            <Col title="genre" className="text-decoration-none" as={Link} xs={6} variant="flush" key={genre.key} to={`/genre/${genre.id}`}>
+            <Col title="genre" className="text-decoration-none" xs={6} variant="flush" key={genre.key} to={`/genre/${genre.id}`}>
               <Card className="py-2 rounded-0 border-0">
                 <div className="icon align-self-end px-2">
                   <FontAwesomeIcon color="white" icon={faArrowCircleRight} />

@@ -1,9 +1,11 @@
 import { fetchAlbumsByGenre } from '../../api/api';
+import mockAlbums from '../../components/__mocks__/albums';
 
 const GET_ALBUMS = 'albums/retrievedAlbums';
 
 const initialState = {
   albums: [],
+  mockAlbums: [...mockAlbums],
 };
 
 const albumsReducer = (state = initialState, action) => {
