@@ -38,9 +38,6 @@ const AlbumsList = () => {
   }
 
   function renderAlbums() {
-    console.log(filter);
-    console.log(albums);
-
     const list = filter.map((album) => {
       if (album.mbid.length > 0) {
         return (
