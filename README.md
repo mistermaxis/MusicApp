@@ -4,6 +4,10 @@
 
 > A mobile web application to search and view artists and songs.
 
+![](./screenshot.png)
+
+[Live Demo](https://mistermaxis-music-app.netlify.app/)
+
 ## Built With
 
 - HTML, JavaScript, CSS
