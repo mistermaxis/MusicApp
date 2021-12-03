@@ -1,12 +1,11 @@
 const initialState = {
   genres: [
-    { id: 'rock', name: 'rock', key: 1 },
-    { id: 'pop', name: 'pop', key: 2 },
-    { id: 'hip-hop', name: 'hip hop', key: 3 },
-    { id: 'rap', name: 'rap', key: 4 },
-    { id: 'metal', name: 'metal', key: 5 },
-    { id: 'electronic', name: 'electronic', key: 6 },
-    { id: 'folk', name: 'folk', key: 7 },
+    { id: 'rock', name: 'Rock', key: 1 },
+    { id: 'pop', name: 'Pop', key: 2 },
+    { id: 'hip-hop', name: 'Hip Hop', key: 3 },
+    { id: 'rap', name: 'Rap', key: 4 },
+    { id: 'metal', name: 'Metal', key: 5 },
+    { id: 'electronic', name: 'Electronic', key: 6 },
   ],
 };
 
