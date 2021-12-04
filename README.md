@@ -8,6 +8,8 @@
 
 [Live Demo](https://mistermaxis-music-app.netlify.app/)
 
+[Video Presentation](https://www.loom.com/share/85d5f98f3a59445b9895ecf4e39c0cd6)
+
 ## Built With
 
 - HTML, JavaScript, CSS
