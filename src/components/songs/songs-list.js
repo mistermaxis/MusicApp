@@ -10,8 +10,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { fetchSongs } from '../../redux/songs/songs';
-import './songs-list.css';
 import secondsToMinutes from '../../utility/converter';
+import './songs-list.css';
 
 const SongsList = () => {
   const { album_id: albumId } = useParams();
