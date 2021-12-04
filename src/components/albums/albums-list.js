@@ -45,7 +45,7 @@ const AlbumsList = () => {
     const list = filter.map((album) => {
       if (album.mbid.length > 0) {
         return (
-          <Col xs={6} md={4} xl={2} key={album.mbid}>
+          <Col xs={6} md={4} key={album.mbid}>
             <Card as={Link} to={`/album/${album.mbid}`} className="text-decoration-none">
               <Card.Img variant="top" src={`${album.image[3]['#text']}`} alt={album.name} />
               <Card.Body>
@@ -66,7 +66,7 @@ const AlbumsList = () => {
       <Row className="py-2 gx-0">
         <Col xs={2} sm={4} className="align-items-center d-flex px-3 text-decoration-none" as={Link} to="/">
           <FontAwesomeIcon color="white" icon={faChevronLeft} />
-          <span className="ps-3 d-none d-sm-block back-to-genres">GENRES</span>
+          <span className="ps-3 d-none d-sm-block genre-header">GENRES</span>
         </Col>
         <Col xs={8} sm={4}>
           <Form.Control className="search-album rounded-pill" onChange={(e) => handleChange(e)} type="text" placeholder="Album..." />
