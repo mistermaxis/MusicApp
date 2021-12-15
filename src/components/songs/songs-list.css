@@ -1,0 +1,19 @@
+.album-img {
+  opacity: 0.4;
+}
+
+.image-card {
+  background-color: black !important;
+}
+
+.song {
+  background-color: transparent !important;
+}
+
+.subtitle-songs {
+  background-color: #0002;
+}
+
+.text-right {
+  text-align: right !important;
+}
